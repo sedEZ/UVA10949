@@ -1,0 +1,10 @@
+Hunt-Szymanski Algorithm:將LCS問題轉為二維LIS問題，再把二維LIS轉為一維LIS，並用LIS解之。	
+	    (* LIS : Longest Increasing Subsequence最長遞增序列)
+	   (如:5 1 3 6 2 8 4 9的LIS 為1 3 6 8 9)
+	若要尋找LIS的長度，有個好的演算法，稱作Robinson-Schensted-Knuth Algorithm，做法範例如下:
+	將輸入序列的開頭到結尾都掃過一遍，若目前數字大於目前LIS的最後一個數字，即放入後面，否則便要進行最佳化。
+	
+
+	而把LCS轉為LIS的過程，是依序找string 1每個元素在string 2中對應到元素的所有位置，再把這些位置遞減排序後，此序列的LIS即為答案，也就是:把LCS的元素對應到的位置，排為一序列，解這個位置序列的LIS，就是LCS的答案。
+	此方法的時間複雜度為O(N*L)。 
+	(N 為數列長度， L 為 LIS 的長度)
